@@ -1,0 +1,21 @@
+<h2>My History</h2>
+<ul class="history">
+    <li *ngFor="let history of history_list"
+    [class.selected]="history === selectedVideo"
+    (click)="onSelect(history)">
+    <span class="badge">{{history.date}}</span> 
+    {{history.title}}
+  </li>
+</ul>
+
+<div *ngIf="selectedVideo">
+
+    <h2>{{selectedVideo.title}} URL</h2>
+    <div><span>Date: </span>{{selectedVideo.date}}</div>
+    <div>
+      <label>URL:
+        {{selectedVideo.url}}
+      </label>
+    </div>
+  
+  </div>

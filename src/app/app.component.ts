@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'relief-apps-project';
+  title = 'Relief Apps Interview Process';
+  constructor() {};
+
+  ngOnInit(): void {};
 }
