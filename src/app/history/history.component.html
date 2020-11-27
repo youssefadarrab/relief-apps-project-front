@@ -3,8 +3,8 @@
     <li *ngFor="let history of history_list"
     [class.selected]="history === selectedVideo"
     (click)="onSelect(history)">
-    <span class="badge">{{history.date}}</span> 
-    {{history.title}}
+    <span class="date">{{history.date}}</span> 
+    <span class="title">{{history.title}}</span>
   </li>
 </ul>
 
