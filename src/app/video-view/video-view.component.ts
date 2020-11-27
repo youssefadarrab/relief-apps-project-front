@@ -11,5 +11,11 @@ export class VideoViewComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  book:any;
+  addClick(){
+    this.book={
+      BookmarkId:0,
+      BookmarkLink:""
+    }
+  }
 }

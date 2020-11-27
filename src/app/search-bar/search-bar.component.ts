@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { SharedService } from '../shared.service';
 @Component({
   selector: 'searchBar',
   templateUrl: './search-bar.component.html',
@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchBarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service:SharedService) { }
+  
+  input_link:any;
 
   ngOnInit(): void {
   }
-
 }

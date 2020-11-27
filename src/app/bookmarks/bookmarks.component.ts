@@ -1,18 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { Bookmark } from 'src/bookmark';
-import { BOOKMARKS } from 'src/bookmarks';
+import { SharedService } from '../shared.service';
+
+
 @Component({
   selector: 'Bookmarks',
   templateUrl: './bookmarks.component.html',
   styleUrls: ['./bookmarks.component.css']
 })
 export class BookmarksComponent implements OnInit {
-  bookmarks = BOOKMARKS;
   selectedBookmark: Bookmark | undefined;
   
-  constructor() { }
+  constructor(private service:SharedService) { }
+  
+  BookmarkList:any=[];
 
   ngOnInit(): void{
+    this.refreshBookmarkList();
+  }
+
+  
+  refreshBookmarkList(){
+    this.service.getBookmarkList().subscribe(data=>{
+      this.BookmarkList=data;
+    });
   }
 
   onSelect(bookmark: Bookmark): void {

@@ -10,16 +10,20 @@ export class SharedService {
 readonly APIUrl = "http://127.0.0.1:8000";
   constructor(private http:HttpClient) { }
 
-  getVidList():Observable<any[]>{
-    return this.http.get<any[]>(this.APIUrl + '/video/');
+  getHistoryList():Observable<any[]>{
+    return this.http.get<any[]>(this.APIUrl + '/history/');
   }
 
-  addVideoHistory(val:any){
-    return this.http.post(this.APIUrl + '/video/',val);
+  addHistory(val:any){
+    return this.http.post(this.APIUrl + '/history/',val);
   }
 
-  addVideoBookmark(val:any){
-    return this.http.post(this.APIUrl + '/video/',val);
+  getBookmarkList():Observable<any[]>{
+    return this.http.get<any[]>(this.APIUrl + '/bookmark/');
+  }
+
+  addBookmark(val:any){
+    return this.http.post(this.APIUrl + '/bookmark/',val);
   }
 
 

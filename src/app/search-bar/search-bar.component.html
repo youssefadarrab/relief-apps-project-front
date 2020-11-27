@@ -1,8 +1,9 @@
-<div class="search_bar">
 
-    <form class="form-inline md-form mr-auto">
-      <input class="form-control mr-sm-2" type="text" placeholder="Enter the video URL" aria-label="Search">
-      <button class="btn btn-unique btn-rounded btn-sm my-0 waves-effect waves-light" type="submit">Search</button>
-    </form>
-
+<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="The video URL" aria-label="The video URL" aria-describedby="button-addon2" [(ngModel)]="input_link">
+  <div class="input-group-append" style="width: auto">
+    <button class="btn btn-outline-secondary" 
+    type="button" id="button-addon2">Play : </button>
   </div>
+</div>
+

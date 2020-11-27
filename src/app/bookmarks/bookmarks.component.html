@@ -1,15 +1,15 @@
 <div class="bookmarkcomponent">
 <h2>My Bookmarks</h2>
 <ul class="bookmarks">
-    <li *ngFor="let bookmark of bookmarks"
+    <li *ngFor="let bookmark of BookmarkList"
     [class.selected]="bookmark === selectedBookmark"
     (click)="onSelect(bookmark)">
-    <span class="badge">{{bookmark.id}}</span> {{bookmark.title}}
+    <span class="badge">{{bookmark.id}}</span> {{bookmark.url}}
   </li>
 </ul>
 <div *ngIf="selectedBookmark">
 
-    <h2>{{selectedBookmark.title}} details</h2>
+    <h2>{{selectedBookmark.url}} details</h2>
     <div><span>id: </span>{{selectedBookmark.id}}</div>
     <div>
       <label>URL:

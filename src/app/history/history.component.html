@@ -1,21 +1,23 @@
-<h2>My History</h2>
-<ul class="history">
-    <li *ngFor="let history of history_list"
-    [class.selected]="history === selectedVideo"
-    (click)="onSelect(history)">
-    <span class="date">{{history.date}}</span> 
-    <span class="title">{{history.title}}</span>
-  </li>
-</ul>
 
-<div *ngIf="selectedVideo">
 
-    <h2>{{selectedVideo.title}} URL</h2>
-    <div><span>Date: </span>{{selectedVideo.date}}</div>
-    <div>
-      <label>URL:
-        {{selectedVideo.url}}
-      </label>
-    </div>
-  
-  </div>
+<table class ="table table-striped">
+  <thead>
+    <tr>
+      <th>HistoryId</th>
+      <th>History Video Link</th>
+      <th>History Video Consultation Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let dataItem of HistoryList">
+      <td>{{dataItem.HistoryId}}</td>
+      <td>{{dataItem.HistoryLink}}</td>
+      <td>{{dataItem.HistoryTimestamp}}</td>
+      <td>
+        <button type="button" class="btn btn-light mr-1">
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

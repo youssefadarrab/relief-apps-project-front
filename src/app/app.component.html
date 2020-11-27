@@ -5,20 +5,16 @@
     <h2 class="d-flex justify-content-center">Youtube Video Player</h2>
 
     <nav class="navbar navbar-expand-sm bg-light navbar-dark">
+    <ul class="navbar-nav">    
         <li class="nav-item">
-            <button routerLink="bookmark"
+            <button routerLink="list_bookmarks"
             class="m-1 btn btn-light btn-outline-primary" Button>Bookmarks</button> 
         </li>
-
-        <li class="nav-item">
-            <button routerLink="history"
-            class="m-1 btn btn-light btn-outline-primary" Button>History</button>
-        </li>
-
+    </ul>
     </nav>
     
 </div>
-<History></History>
-<videoView></videoView>
 <searchBar></searchBar>
+<videoView></videoView>
+<History></History>
 <router-outlet></router-outlet>
