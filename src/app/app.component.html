@@ -1,8 +1,24 @@
-<h1>{{title}}</h1>
-<mat-toolbar color="primary">    
-    <button mat-button routerLink="/">Home</button>  
-    <button mat-button routerLink="/list_bookmarks">Bookmarks</button>
-</mat-toolbar><router-outlet></router-outlet>
-<app-history></app-history>
-<app-video-view></app-video-view>
-<app-search-bar></app-search-bar>
+
+<div class="container">
+
+    <h1 class="d-flex justify-content-center">{{title}}</h1>
+    <h2 class="d-flex justify-content-center">Youtube Video Player</h2>
+
+    <nav class="navbar navbar-expand-sm bg-light navbar-dark">
+        <li class="nav-item">
+            <button routerLink="bookmark"
+            class="m-1 btn btn-light btn-outline-primary" Button>Bookmarks</button> 
+        </li>
+
+        <li class="nav-item">
+            <button routerLink="history"
+            class="m-1 btn btn-light btn-outline-primary" Button>History</button>
+        </li>
+
+    </nav>
+    
+</div>
+<History></History>
+<videoView></videoView>
+<searchBar></searchBar>
+<router-outlet></router-outlet>
