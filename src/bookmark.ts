@@ -1,4 +1,4 @@
 export interface Bookmark {
-    id: number;
-    url: string;
+    BookmarkId: number | undefined;
+    BookmarkLink: string | undefined;
 }

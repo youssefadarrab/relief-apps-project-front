@@ -1,5 +1,5 @@
 export interface History {
-    id: number;
-    date: string,
-    url: string;
+    HistoryId: number | undefined;
+    HistoryLink: string | undefined,
+    HistoryTimestamp: string | undefined;
 }

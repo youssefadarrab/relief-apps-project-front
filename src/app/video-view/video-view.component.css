@@ -1,0 +1,9 @@
+.btn {
+    display: block;
+    position: relative;
+    top: 465px;
+    
+}
+.player {
+    position:absolute;
+}

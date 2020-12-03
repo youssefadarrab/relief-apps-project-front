@@ -3,14 +3,13 @@
 <table class ="table table-striped">
   <thead>
     <tr>
-      <th>HistoryId</th>
       <th>History Video Link</th>
       <th>History Video Consultation Time</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let dataItem of HistoryList">
-      <td>{{dataItem.HistoryId}}</td>
+    <tr *ngFor="let dataItem of HistoryList"
+    [class.selected]="dataItem === selectedVideo" (click)="onSelect(dataItem)">
       <td>{{dataItem.HistoryLink}}</td>
       <td>{{dataItem.HistoryTimestamp}}</td>
       <td>

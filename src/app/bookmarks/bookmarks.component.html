@@ -1,21 +1,43 @@
 <div class="bookmarkcomponent">
-<h2>My Bookmarks</h2>
-<ul class="bookmarks">
-    <li *ngFor="let bookmark of BookmarkList"
-    [class.selected]="bookmark === selectedBookmark"
-    (click)="onSelect(bookmark)">
-    <span class="badge">{{bookmark.id}}</span> {{bookmark.url}}
-  </li>
-</ul>
-<div *ngIf="selectedBookmark">
+  
+  <button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#exampleModal"
+  (click)="addClick()">
+   Add video to Bookmarks
+  </button>
+  
 
-    <h2>{{selectedBookmark.url}} details</h2>
-    <div><span>id: </span>{{selectedBookmark.id}}</div>
+  <app-add-bookmark [book]="book" *ngIf="AddBookComp">
+  </app-add-bookmark>
+
+
+  <table class ="table table-striped">
+    <thead>
+      <tr>
+        <th>Bookmark Id</th>
+        <th>Bookmark Link</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let bookmark of BookmarkList"
+      [class.selected]="bookmark === selectedBookmark" (click)="onSelect(bookmark)">
+        <td>{{bookmark.BookmarkId}}</td>
+        <td>{{bookmark.BookmarkLink}}</td>
+        <td>
+          <button type="button" class="btn btn-light mr-1">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="selectedBookmark">
+    <h2>{{selectedBookmark.BookmarkLink}} details</h2>
+    <div><span>id: </span>{{selectedBookmark.BookmarkId}}</div>
     <div>
       <label>URL:
-        <input [(ngModel)]="selectedBookmark.url" placeholder="url"/>
+        <input [(ngModel)]="selectedBookmark.BookmarkLink" placeholder="url"/>
       </label>
     </div>
-  
-  </div>
 </div>

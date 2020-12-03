@@ -7,6 +7,7 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { VideoViewComponent } from './video-view/video-view.component';
 import { HistoryComponent } from './history/history.component';
 import { BookmarksComponent } from './bookmarks/bookmarks.component';
+import { AddBookmarkComponent } from './bookmarks/add-bookmark/add-bookmark.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
@@ -20,13 +21,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     SearchBarComponent,
     VideoViewComponent,
     HistoryComponent,
-    BookmarksComponent
+    BookmarksComponent,
+    AddBookmarkComponent
   ],
   imports: [
     BrowserModule,
