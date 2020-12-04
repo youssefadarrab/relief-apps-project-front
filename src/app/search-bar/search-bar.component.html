@@ -1,7 +1,16 @@
+<header class="header">
+  <h1>Youtube Video Player</h1>
+  <nav>
+    <a routerLink="">Home</a> | <a routerLink="/list_bookmarks">Bookmarks</a>
+  </nav>
+</header>
+
 <div class="input-group mb-3">
-  <input type="text" class="form-control" name="input_link" placeholder="The video URL" aria-label="The video URL" aria-describedby="button-addon2" [(ngModel)]="input_link">
-  <div class="input-group-append" style="width: auto">
-    <button class="btn btn-outline-secondary" 
-    type="button" id="button-addon2">Play : </button>
-  </div>
+  <form class="form" (ngSubmit)="onSubmit()">
+    <input type="text" class="form-control" name="input_link" placeholder="The video URL" aria-label="The video URL" aria-describedby="button-addon2" [(ngModel)]="input_link">
+    <div class="input-group-append" style="width: auto">
+      <input type="submit" value="Submit" class="btn">
+    </div>
+  </form>
 </div>
+

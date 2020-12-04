@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { SharedService } from '../shared.service';
 @Component({
   selector: 'searchBar',
@@ -7,10 +7,24 @@ import { SharedService } from '../shared.service';
 })
 export class SearchBarComponent implements OnInit {
 
-  constructor(private service:SharedService) { }
-  
+  @Output() addHistory: EventEmitter<any> = new EventEmitter();
+
   'input_link':string;
 
+  constructor(private service:SharedService) { }
+
   ngOnInit(): void {
+  }
+
+  onSubmit() {
+    const today = new Date();
+    const timestamp = today.toDateString;
+    const history = {
+      HistoryId: 0,
+      HistoryLink: this.input_link,
+      HistoryTimestamp: timestamp
+    }
+
+    this.addHistory.emit(history);
   }
 }

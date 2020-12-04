@@ -1,22 +1,18 @@
-
-
-<table class ="table table-striped">
-  <thead>
-    <tr>
-      <th>History Video Link</th>
-      <th>History Video Consultation Time</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let dataItem of HistoryList"
-    [class.selected]="dataItem === selectedVideo" (click)="onSelect(dataItem)">
-      <td>{{dataItem.HistoryLink}}</td>
-      <td>{{dataItem.HistoryTimestamp}}</td>
-      <td>
-        <button type="button" class="btn btn-light mr-1">
-          Delete
-        </button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<searchBar (addHistory)="addHistory($event)"></searchBar>
+<div>
+  <table class ="table table-striped">
+    <thead>
+      <tr>
+        <th>History Video Link</th>
+        <th>History Video Consultation Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dataItem of HistoryList"
+      [class.selected]="dataItem === selectedVideo" (click)="onSelect(dataItem)">
+        <td>{{dataItem.HistoryLink}}</td>
+        <td>{{dataItem.HistoryTimestamp}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

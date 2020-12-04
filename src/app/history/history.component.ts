@@ -26,6 +26,11 @@ export class HistoryComponent implements OnInit {
 
   onSelect(video: History): void {
   this.selectedVideo = video;
+  }
+  
+  addHistory(history:any) {
+    this.service.addHistory(history).subscribe(history => {
+      this.HistoryList.push(history);
+  });
+  }
 }
-}
-
