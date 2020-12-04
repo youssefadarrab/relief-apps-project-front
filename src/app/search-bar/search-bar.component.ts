@@ -9,7 +9,7 @@ export class SearchBarComponent implements OnInit {
 
   constructor(private service:SharedService) { }
   
-  'input-link':string;
+  'input_link':string;
 
   ngOnInit(): void {
   }
